@@ -1,0 +1,115 @@
+/* Log-In */
+
+.log-in-logo {
+  width: calc(100% / 3);
+  position: absolute;
+  top: 1.2rem;
+
+  img {
+    width: 210px;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.log-in-page {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  color: var(--text-primary);
+}
+
+.log-in-left {
+  width: 50%;
+  min-height: 100vh;
+  background-color: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-in-right {
+  width: 50%;
+  min-height: 100vh;
+  background-color: var(--bg-secondary);
+  background-image: url("../assets/img/login-image.png");
+  background-position: center bottom;
+  background-size: 85%;
+  background-repeat: no-repeat;
+}
+
+.log-in-title {
+  font-size: var(--font-md);
+}
+
+#log-in-form {
+  width: 430px;
+  color: var(--text-primary);
+
+  hr {
+    border: 1px solid var(--text-primary);
+    opacity: 0.5;
+    margin: 1rem 0;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: var(--font-sm);
+
+    &:hover {
+      border: 2px solid var(--primary);
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 2px solid var(--primary);
+    }
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem 0.75rem;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom left, #ff3131, #ff8a15);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: var(--font-sm);
+
+    &:hover {
+      background-image: linear-gradient(
+        to bottom left,
+        #ff3131,
+        var(--warning)
+      );
+    }
+  }
+
+  .toggle-form {
+    font-size: var(--font-sm);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+
+.new-forgot-account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-intro {
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+  margin-bottom: 20px;
+}

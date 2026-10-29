@@ -1,0 +1,30 @@
+.landing-page {
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-response {
+  text-align: center;
+
+  i {
+    font-size: 50px;
+    color: var(--success);
+  }
+}
+
+.landing-name {
+  color: var(--text-primary);
+  font-size: var(--font-md);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--text-primary);
+  font-weight: 800;
+}
+
+.landing-redirect {
+  color: var(--text-primary);
+  font-style: italic;
+}

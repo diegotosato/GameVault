@@ -1,0 +1,95 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+/* CSS :root */
+:root {
+  --bg-main: #0f1115;
+  --bg-secondary: #212121;
+  --bg-tertiary: #323232;
+
+  --border-color: #2f3542;
+
+  --text-primary: #ffffff;
+  --text-secondary: #b3b9c5;
+  --text-tertiary: #8d8d8d;
+
+  --primary: #ff5400;
+  --primary-hover: #ff6a1a;
+  --primary-active: #cc4400;
+
+  --warning: #ffb800;
+  --success: #22c55e;
+  --error: #ef4444;
+
+  --pc: #ff5400;
+  --playstation: #003791;
+  --xbox: #107c10;
+  --nintendo: #e60012;
+
+  --font-xl: 36px;
+  --font-md: 24px;
+  --font-sm: 14px;
+}
+
+body {
+  background-color: var(--bg-secondary);
+}
+
+/* Utilities */
+.container-fluid {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success {
+  color: var(--success);
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: var(--font-sm);
+}
+
+.error {
+  color: var(--error);
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: var(--font-sm);
+}
+
+.button-wishlist {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border-radius: 0 10px 0 10px;
+  cursor: pointer;
+}

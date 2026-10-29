@@ -1,0 +1,403 @@
+#admin {
+  background-color: var(--text-secondary);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login {
+  width: 400px;
+  height: 400px;
+  padding: 3rem;
+  border: 2px solid var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+#admin-form {
+  width: 100%;
+
+  button {
+    width: 100%;
+    border: none;
+    padding: 0.5rem 0;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+}
+
+.admin-email,
+.admin-password {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin-bottom: 15px;
+    padding: 0.5rem 0.65rem;
+    border: 2px solid var(--admin-border);
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.admin-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  h1 {
+    color: var(--text-primary);
+  }
+
+  button {
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.admin-body {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-card {
+  width: calc(100% / 2 - 10px);
+  height: calc(100% / 5 - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  font-size: var(--font-sm);
+}
+
+.admin-game-name {
+  width: 150px;
+}
+
+.admin-card-image {
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.admin-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .admin-game-dev {
+    font-size: var(--font-sm);
+    width: 150px;
+  }
+}
+
+.admin-card-body-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  white-space: nowrap;
+
+  button {
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.admin-edit {
+  background-color: var(--warning);
+}
+
+.admin-delete {
+  background-color: var(--error);
+}
+
+/* Add Game Form */
+#admin-add-game {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.form-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-title,
+.add-description,
+.add-release-date,
+.add-image,
+.add-dev {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 4px;
+    font-size: var(--font-sm);
+    color: white;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 0.5rem 0.65rem;
+    border: 2px solid var(--admin-border);
+    height: 38px;
+    box-sizing: border-box;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  textarea {
+    height: auto;
+  }
+
+  input[type="file"] {
+    background-color: white;
+  }
+}
+
+.add-title-and-date {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+
+  .add-title {
+    flex: 2;
+    min-width: 0;
+  }
+
+  .add-release-date {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.add-file-and-selects {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+
+  .add-image,
+  .add-dev {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.add-genres-and-modes {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.add-console {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 4px;
+    font-size: var(--font-sm);
+    color: white;
+  }
+
+  .admin-checkbox-list {
+    display: flex;
+    justify-content: start;
+    gap: 6px 16px;
+    background-color: white;
+    padding: 12px;
+  }
+
+  .genre-selection {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+
+    label {
+      font-size: var(--font-sm);
+      cursor: pointer;
+      color: #333;
+      white-space: nowrap;
+    }
+  }
+}
+
+.add-genres,
+.add-multimodes {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  min-width: 0;
+
+  p {
+    margin-bottom: 4px;
+    font-size: var(--font-sm);
+    color: white;
+  }
+
+  .admin-checkbox-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 16px;
+    background-color: white;
+    padding: 12px;
+    align-items: start;
+  }
+
+  .admin-genre-selection {
+    display: flex;
+    width: calc(100% / 2 - 16px);
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+
+    label {
+      font-size: var(--font-sm);
+      cursor: pointer;
+      color: #333;
+      white-space: nowrap;
+    }
+  }
+}
+
+#admin-add-game .genre-selection input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  width: auto;
+  height: auto;
+  background-color: revert;
+  border: revert;
+  border-radius: revert;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:checked {
+    background-color: revert;
+    border-color: revert;
+  }
+
+  &:checked::after {
+    display: none;
+  }
+}
+
+.add-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  button[type="submit"] {
+    border: none;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    cursor: pointer;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.admin-paginate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+
+  button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: var(--text-primary);
+    }
+  }
+}
+
+.admin-confirm-delete {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.confirm-delete-buttons {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}

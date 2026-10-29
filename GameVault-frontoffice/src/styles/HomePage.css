@@ -1,0 +1,92 @@
+/* Home Page */
+
+/* Jumbotron */
+.jumbotron {
+  width: 100%;
+  height: 550px;
+  background-image: url("../assets/img/jumbotron.jpg");
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slogan {
+  font-size: var(--font-xl);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--text-primary);
+  text-shadow: 0px 0px 10px black;
+}
+
+/* section */
+.explore {
+  padding: 2rem 0 4rem;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: var(--font-xl);
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 50px;
+
+  .bi-arrow-right-short {
+    color: var(--text-tertiary);
+  }
+
+  &:hover {
+    .bi-arrow-right-short {
+      color: var(--text-primary);
+    }
+  }
+}
+
+.section-row {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.card {
+  width: calc(100% / 3 - 50px);
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  /* background-size: cover;
+  background-position: center center; */
+  cursor: pointer;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-size: var(--font-sm);
+  gap: 10px;
+}
+
+.game-consoles {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+
+.console-badge {
+  padding: 0.3rem 0.7rem;
+  background-color: red;
+  border-radius: 10px;
+}
