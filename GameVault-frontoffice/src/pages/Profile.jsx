@@ -37,6 +37,8 @@ export default function Login() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
+  const [callStatus, setCallStatus] = useState(null);
+
   async function handleChangeEmail(e) {
     e.preventDefault();
 
@@ -66,14 +68,15 @@ export default function Login() {
   async function handleChangePassword(e) {
     e.preventDefault();
 
-    setSubmitPass(true);
     if (
       passCurrentPassword.length === 0 ||
       newPassword.length === 0 ||
       confirmNewPassword.length === 0 ||
       newPassword !== confirmNewPassword
-    )
+    ) {
+      setSubmitPass(true);
       return;
+    }
 
     setLoader(true);
     setTimeout(() => setLoader(false), 3000);
@@ -89,6 +92,7 @@ export default function Login() {
 
       const response = await axios.post("/api/password/update", formData);
 
+      setCallStatus(response?.data?.success);
       setPassStatus(response?.data?.success);
       setPassMessage(response?.data?.message);
       setPassCurrentPassword("");
@@ -97,6 +101,8 @@ export default function Login() {
     } catch (err) {
       setPassStatus(err.response?.status);
       setPassMessage(err.response?.data?.message || "Errore imprevisto");
+    } finally {
+      setSubmitPass(false);
     }
   }
 
@@ -135,8 +141,6 @@ export default function Login() {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  console.log(userWishes);
 
   // wishlist
   async function handleWishlist(videogame_id) {
@@ -237,7 +241,7 @@ export default function Login() {
               <h3>Cambia la tua password</h3>
 
               <form onSubmit={(e) => handleChangePassword(e)}>
-                {submitPass && passCurrentPassword.length === 0 && (
+                {submitPass && (
                   <small className="error">
                     <i className="bi bi-exclamation-circle-fill"></i> Campo
                     obbligatorio
@@ -252,7 +256,7 @@ export default function Login() {
                   onChange={(e) => setPassCurrentPassword(e.target.value)}
                 />
 
-                {submitPass && newPassword.length === 0 && (
+                {submitPass && (
                   <small className="error">
                     <i className="bi bi-exclamation-circle-fill"></i> Campo
                     obbligatorio
@@ -273,7 +277,7 @@ export default function Login() {
                   onChange={(e) => setNewPassword(e.target.value)}
                 />
 
-                {submitPass && confirmNewPassword.length === 0 && (
+                {submitPass && (
                   <small className="error">
                     <i className="bi bi-exclamation-circle-fill"></i> Campo
                     obbligatorio
